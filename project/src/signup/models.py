@@ -6,6 +6,7 @@ class userCreds(models.Model):
     username = models.CharField(max_length=20)
     email = models.EmailField()
     password = models.CharField(max_length=20)
+    points = models.PositiveIntegerField(default=0)
 
 class userCredsForm(forms.ModelForm):
     class Meta:

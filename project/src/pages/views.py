@@ -1,3 +1,4 @@
+from django.http import HttpResponse
 from django.shortcuts import render
 
 # Create your views here.
@@ -10,7 +11,4 @@ def contact_view(request):
 def about_view(request):
     return render(request, "about.html", {})
 
-def login_view(request):
-    return render(request, "login.html", {})
-    
 

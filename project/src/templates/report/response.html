@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block maincontent %}
+    <h2>Report a place</h2>
+    <p>Have you come across someplace covered by disgusting piles of waste and garbage? 
+        Why not report it here and let the cleaning organizations know?</p>
+    <br>
+    <form action="" method="POST">
+        {% csrf_token %}
+        {{ form }}
+        <input type="submit" value="Post">
+    </form>
+    <p id="show-error"></p>
+
+<script>
+    let x = document.getElementById("show-error")
+
+    function getLocation() {
+        if(navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(showPosition);
+        }
+        else {
+            x.innerHTML = "Geolocation is not supported by this browser."
+        }
+    }
+
+    function showPosition(position) {
+        x.innerHTML = "Latitude: " + position.coords.latitude 
+        + "<br> Longitude: " + position.coords.longitude ;
+    }
+</script>
+
+{% endblock maincontent %}

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Clean Slate Home</title>
+        {% load static %}
+        <link href="{% static 'css/hstyle.css' %}" rel="stylesheet" type="text/css"/>
+    </head>
+    {% include 'navbar.html' %}
+    
+    <body>
+        <div class="Header">
+            <div class="inner-header">
+                <div class="logo">Clean Slate</div>
+                    <div class="header-link">
+                        <div class="dropdown">
+                    <button class="drpbtn"> Sign up</button>
+                    <div class="dropcontent">
+                        <a href="../signup/">Cleaning Organisation</a>
+                        <a href="#">Moderator</a>
+                    </div>
+                    </div>
+                    </div>
+                    <div class="header-link">
+                            <div class="dropdown">
+                                    <button class="drpbtn">Login</button>
+                                    <div class="dropcontent">
+                                        <a href="../login/">Cleaning Organisation</a>
+                                        <a href="#">Moderator</a>
+                                    </div>
+                                    </div>
+                    </div>    
+            </div>
+        </div>
+        <div class="Content">
+            <div class="banner-image">
+                <div class="inner-banner-image">
+                    <div class="banner_content">
+                        <h1>Let It Be Wild, Not Defiled</h1>
+                        <p><i>If you want to clean up the environment, start with your mind. 
+                            It starts there!<br>-Byron Katie-</i></p>
+                        <a href="../report/" class="button">Report a Place</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="Container">
+            <div class="items">
+                <a href="#">
+                    <img src="{% static 'img/lb.jpg' %}" class="thumbnail">
+                    <div class="caption">
+                        <h2>LeaderBoards</h2>
+                        <p>Quality is not an act, it is a habit.</p>
+                    </div>
+                </a>
+            </div>
+            <div class="items">
+                <a href="recent.html" target="_blank">
+                    <img src="{% static 'img/cn.jpg' %}"" class="thumbnail">
+                    <div class="caption">
+                        <h2>Recent Activities</h2>
+                        <p>Find out where we made a difference!</p>
+                    </div>
+                </a>
+            </div>
+            <div class="items">
+                <a href="#">
+                    <img src="{% static 'img/ab.png' %}" class="thumbnail">
+                    <div class="caption">
+                        <h2>About</h2>
+                        <p>Find out more about us and our mission!</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <footer>@Copyright|Jeril Monzi Jacob|Vivek S|Angel Mary Alex|Kiran Udayakumar</footer>
+    </body>
+</html>

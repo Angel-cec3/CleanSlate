@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/abt.css' %}" type="text/css">
+    <title>About</title>
+</head>
+<body>
+    {% include 'navbar.html' %}
+    <header>
+        <div id="header">
+            <h1 id="abt"><b>About</b></h1> <br>
+        </div>
+    </header>
+    <div id="push1">
+        <h2 class="subhead" ><b>Waste Management</b></h2>
+        <p class="text" >
+            Waste are unwanted or unusable materials. Waste is any substance 
+            which is discarded after primary use, or is worthless, defective
+            and of no use. A by-product by contrast is a joint product of 
+            relatively minor economic value.
+        </p> 
+
+        <h2 class="subhead" ><b>Types of Wastes</b></h2>
+        <UL class="text">
+            <li>Municipal waste includes household waste, commercial waste, 
+                and demolition waste</li>
+            <li>Hazardous waste includes industrial waste</li>
+            <li>Biomedical waste includes clinical waste</li>
+            <li>Special hazardous waste includes radioactive waste, 
+                explosive waste, and electronic waste (e-waste)</li>
+        </UL>
+    </div>
+    <div id="big_push">
+        <h2 class="subhead"><b>How we can help you...</b></h2>
+        <p class="text">We provide a free friendly platform to cleaning organisations
+           and public to cooperate and clean         
+        </p>
+
+    </div>
+</body>
+<footer >
+    <div id="#footer">
+        <p id="link"><b>Check us on:</b></p>
+        <a href="https://www.facebook.com/" target="#"><img src="{% static 'img/fufb.png' %}" alt=""></a>
+        <a href="https://www.twitter.com/login?lang=en" target="#"><img src="{% static 'img/fut_logo.png' %}" alt=""></a>
+        <a href="https://www.instagram.com/accounts/login/" target="#"><img src="{% static 'img/fuinsta_logo.jpg' %}" alt=""></a>
+        <a href="https://www.youtube.com/" target="#"><img src="{% static 'img/fuyt_logo.png' %}" alt=""></a>
+    </div>
+</footer>
+</html>

@@ -16,8 +16,9 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from joblist.views import jobs_list_view
-from pages.views import home_view, contact_view, about_view, login_view, signup_view
+from pages.views import home_view, contact_view, about_view, login_view
 from report.views import report_place
+from signup.views import register_user
 
 urlpatterns = [
     path('', home_view, name="home"),
@@ -27,6 +28,6 @@ urlpatterns = [
     path('jobs/', jobs_list_view, name="jobs"),
     path('report/', report_place, name="report"),
     path('login/', login_view, name="login"),
-    path('signup/', signup_view, name="signup"),
+    path('reg/', register_user, name="reg"),
     path('admin/', admin.site.urls),
 ]

@@ -4,8 +4,9 @@ from django.contrib.auth.models import User
 # Create your views here.
 
 def register_user(request):
-    if request.method = 'POST':
+    if request.method == 'POST':
         form = userCredsForm(request.POST)
+        print(form.is_valid())
         if form.is_valid():
             user_ = userCreds()
             user_.username = form.cleaned_data['username']
@@ -14,7 +15,9 @@ def register_user(request):
             user = User.objects.create_user(user_.username, user_.email, user_.password)
             user.save()
             return render(request, "home.html", {})
-        return render(request, "home.html", {})
+    else:
+        form = userCredsForm()
+    return render(request, "signup/signup.html", { 'form': form })
 
 
 

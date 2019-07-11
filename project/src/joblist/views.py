@@ -1,14 +1,14 @@
 from django.shortcuts import render
 from .models import Job
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 def jobs_list_view(request):
-    obj = Job.objects.get(id=1)
-    details = {
-        'location': obj.location,
-        'picture': obj.picture,
-        'urgency': obj.urgency
+    jobs = Job.objects.all()
+    jobs_dict = {
+        'jobs': jobs
     }
-    return render(request, "joblist/listjobs.html", details)
+    return render(request, "joblist/listjobs.html", jobs_dict)
+    
 
 

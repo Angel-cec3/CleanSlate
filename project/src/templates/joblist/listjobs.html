@@ -1,3 +1,16 @@
 <b>JOBS</b>
 
-{{ location }}
+<br><br>
+{% for job in jobs %}
+    {{ forloop.counter }}
+    <br>
+    Location: {{ job.location }}
+    <br>
+    Picture: {{ job.picture }}
+    <br>
+    Top Priority: {{ job.top_priority}}
+    ------------------------------------------
+    <button value="{{ forloop.counter }}">Start Job</button>
+    <br><br>
+{% endfor %}
+    

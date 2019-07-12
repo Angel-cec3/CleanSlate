@@ -25,3 +25,15 @@ class CreatePostView(CreateView): # new
     template_name = 'report/response.html'
     success_url = reverse_lazy('home')
 
+def current_job_view(request):
+    # if request.method == 'POST':
+    #     form = CurrentForm(request.POST)
+    #     print(form.is_valid())
+    #     if form.is_valid:
+    #         obj = Job()
+    #         obj.current_job = request.POST['current_job']
+    #         obj.save()
+    #         return render(request, "home.html", {})
+    # else:
+    #     form = CurrentForm()
+    return render(request, "joblist/listjobs.html", {})

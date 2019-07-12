@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'pages',
     'report',
     'signup',
+    'account',
 ]
 
 MIDDLEWARE = [

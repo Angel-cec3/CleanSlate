@@ -1,5 +1,6 @@
 import uuid
 from django.db import models
+from django import forms
 
 # Create your models here.
 class Job(models.Model):
@@ -10,3 +11,8 @@ class Job(models.Model):
 
     def __str__(self):
         return self.location
+
+# class CurrentForm(forms.ModelForm):
+#     class Meta:
+#         model = Job
+#         fields = ['current_job']

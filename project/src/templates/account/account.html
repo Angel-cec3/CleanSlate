@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+{% load static %}
+<link href='{% static "css/style3.css" %}' rel='stylesheet' type='text/css'>
+</head>
+{% include 'navbar.html' %}
+<body>
+
+
+  <div class="container">
+    <h1>Register</h1>
+    <p>Please Enter job-id to start:</p>
+    <form action="" method='POST'>
+      <hr>
+        {% csrf_token %}
+        {{ form }}
+      <hr>
+      <input type="submit" class="registerbtn" value="Post">Start</input>
+    </form>
+
+  </div>
+  
+  <div class="container signin">
+    <p>Already have an account? <a href="../login/">Sign in</a>.</p>
+  </div>
+
+
+</body>
+</html>

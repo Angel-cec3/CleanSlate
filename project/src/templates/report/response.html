@@ -1,34 +1,67 @@
 {% extends 'base.html' %}
 
 {% block maincontent %}
-    <h2>Report a place</h2>
-    <p>Have you come across someplace covered by disgusting piles of waste and garbage? 
-        Why not report it here and let the cleaning organizations know?</p>
-    <br>
-    <form enctype="multipart/form-data" method="POST" action="">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Post</button>
-    </form>
-    <br><br>
-    <p id="show-error"></p>
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/resp.css' %}" type="text/css">
+<style>
 
-<script>
-    let x = document.getElementById("show-error")
+body{
+    margin: 0;
+    background-color: antiquewhite;
+}
 
-    function getLocation() {
-        if(navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(showPosition);
+#header{
+    padding: 20px;
+    background-color: white;
+    border-bottom: solid black 5px;
+    text-align: center;
+}
+
+.content{
+    border: 4px groove grey;
+    margin: 100px 450px 0px 450px;
+    padding: 25px 10px 200px 10px;
+    text-align: center;
+}
+
+.ip{
+    text-align: left;
+}
+</style>
+
+<div style="text-align: center; background-color: cadetblue;">
+    <div id="header">
+        <h2>Report a place</h2>
+    </div>
+        <p>Have you come across someplace covered by disgusting piles of waste and garbage? 
+            Why not report it here and let the cleaning organizations know?</p>
+        <br>
+        <form enctype="multipart/form-data" method="POST" action="">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Post</button>
+        </form>
+        <br><br>
+        <p id="show-error"></p>
+
+    <script>
+        let x = document.getElementById("show-error")
+
+        function getLocation() {
+            if(navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(showPosition);
+            }
+            else {
+                x.innerHTML = "Geolocation is not supported by this browser."
+            }
         }
-        else {
-            x.innerHTML = "Geolocation is not supported by this browser."
-        }
-    }
 
-    function showPosition(position) {
-        x.innerHTML = "Latitude: " + position.coords.latitude 
-        + "<br> Longitude: " + position.coords.longitude ;
-    }
-</script>
+        function showPosition(position) {
+            x.innerHTML = "Latitude: " + position.coords.latitude 
+            + "<br> Longitude: " + position.coords.longitude ;
+        }
+    </script>
+</div>
+
 
 {% endblock maincontent %}

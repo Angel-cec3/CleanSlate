@@ -1,5 +1,8 @@
-<b>JOBS</b>
 
+{% include 'navbar.html' %}
+<b style="text-align:center; font-size:180%;">JOBS</b>
+
+<div style="background-color: aqua; text-align: center; font-size: 150%;">
 <br><br>
 {% for job in jobs %}
     {{ forloop.counter }}
@@ -11,16 +14,8 @@
     Top Priority: {{ job.top_priority}}
     <br>
     Id: {{ job.job_id }}
-    ------------------------------------------
-    <button value="{{ forloop.counter }}">Start Job</button>
+    (Copy this and paste it in your account to start this job)
     <br><br>
-
-
-    <ul>
-        {% for post in jobs %}
-          <h2>{{ post.title }}</h2>
-          
-        {% endfor %}
-    </ul>
+  </div>
 {% endfor %}
     

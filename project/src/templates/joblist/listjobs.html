@@ -1,0 +1,21 @@
+
+{% include 'navbar.html' %}
+<b style="text-align:center; font-size:180%;">JOBS</b>
+
+<div style="background-color: aqua; text-align: center; font-size: 150%;">
+<br><br>
+{% for job in jobs %}
+    {{ forloop.counter }}
+    <br>
+    Location: {{ job.location }}
+    <br>
+    <img src="{{ job.picture.url }}" alt="{{ job.title }}">
+    <br>
+    Top Priority: {{ job.top_priority}}
+    <br>
+    Id: {{ job.job_id }}
+    (Copy this and paste it in your account to start this job)
+    <br><br>
+  </div>
+{% endfor %}
+    

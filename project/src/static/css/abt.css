@@ -1,0 +1,47 @@
+body{
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    margin: 0%
+}
+
+#header{
+  
+    color: rgb(238, 3, 3);
+    background-color: rgb(17, 7, 163);
+    border-radius: 50%;
+    text-align: center;
+    padding: 0;
+    
+}
+#abt {
+    font-size: 500%;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.subhead {
+    margin-left: 20%;
+    font-size: 200%;
+}
+.text {
+    text-align: left;
+    font-size: 150%;
+    margin-left: 5%;
+    margin-right: 10%;
+}
+#type {
+    margin-left: 10px;
+    text-align: left;
+    font-size: 150%;
+}
+#link {
+     text-align: end;
+     margin-right: 20%;
+}
+
+footer img{
+    margin-top: 0;
+    width: 4%;
+    float: center;
+    margin-left: 2%;
+    margin-right: 2%;
+}

@@ -8,10 +8,9 @@
     <form enctype="multipart/form-data" method="POST" action="">
         {% csrf_token %}
         {{ form.as_p }}
-        <input type="submit" value="Upload">
+        <button type="submit">Post</button>
     </form>
     <br><br>
-    <img src="{{ MEDIA_URL }}{{ imageFile }}" alt="">
     <p id="show-error"></p>
 
 <script>

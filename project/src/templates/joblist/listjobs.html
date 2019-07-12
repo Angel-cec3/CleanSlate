@@ -6,11 +6,21 @@
     <br>
     Location: {{ job.location }}
     <br>
-    Picture: {{ job.picture }}
+    <img src="{{ job.picture.url }}" alt="{{ job.title }}">
     <br>
     Top Priority: {{ job.top_priority}}
+    <br>
+    Id: {{ job.job_id }}
     ------------------------------------------
     <button value="{{ forloop.counter }}">Start Job</button>
     <br><br>
+
+
+    <ul>
+        {% for post in jobs %}
+          <h2>{{ post.title }}</h2>
+          
+        {% endfor %}
+    </ul>
 {% endfor %}
     

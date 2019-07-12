@@ -1,7 +1,10 @@
 from django.shortcuts import render
 from .models import Job
-from .forms import ImageForm
-from django.contrib.auth.decorators import login_required
+from django.views.generic import ListView
+from django.views.generic import ListView, CreateView 
+from django.urls import reverse_lazy 
+
+from .forms import PostForm 
 
 # Create your views here.
 def jobs_list_view(request):
@@ -10,23 +13,15 @@ def jobs_list_view(request):
         'jobs': jobs
     }
     return render(request, "joblist/listjobs.html", jobs_dict)
-    
-def showImage(request):
-
-    lastImage= Job.objects.last()
-
-    imageFile= lastImage.imageFile
 
 
-    form= ImageForm(request.POST or None, request.FILES or None)
-    if form.is_valid():
-        form.save()
+class HomePageView(ListView):
+    model = Job
+    template_name = 'joblist/listjobs.html'
 
-    
-    context= {'imagefile': imageFile,
-              'form': form
-              }
-    
-      
-    return render(request, 'report/response.html', context)
+class CreatePostView(CreateView): # new
+    model = Job
+    form_class = PostForm
+    template_name = 'report/response.html'
+    success_url = reverse_lazy('home')
 
